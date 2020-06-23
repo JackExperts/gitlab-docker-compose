@@ -1,0 +1,19 @@
+web:
+  image: 'gitlab/gitlab-ce:latest'
+  restart: always
+  hostname: 'gitlab.exemple.com'
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      gitlab_rails['time_zone'] = "America/Sao_Paulo"
+      external_url 'https://gitlab.exemple.com'
+      letsencrypt['enable'] = true
+      letsencrypt['contact_emails'] = ['email@example']
+  ports:
+    - '8929:8929'
+    - '22:22'
+    - '80:80'
+    - '443:443'
+  volumes:
+    - '/opt/gitlab/deploy/config:/etc/gitlab'
+    - '/opt/gitlab/deploy/logs:/var/log/gitlab'
+    - '/opt/gitlab/deploy/data:/ar/opt/gitlab'
