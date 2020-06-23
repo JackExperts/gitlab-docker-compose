@@ -16,4 +16,4 @@ web:
   volumes:
     - '/opt/gitlab/deploy/config:/etc/gitlab'
     - '/opt/gitlab/deploy/logs:/var/log/gitlab'
-    - '/opt/gitlab/deploy/data:/ar/opt/gitlab'
+    - '/opt/gitlab/deploy/data:/var/opt/gitlab'
